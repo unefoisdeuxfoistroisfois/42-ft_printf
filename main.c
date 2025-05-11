@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 01:52:36 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/12 00:12:47 by britela-         ###   ########.fr       */
+/*   Created: 2025/05/11 23:55:12 by britela-          #+#    #+#             */
+/*   Updated: 2025/05/12 00:16:17 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include "unistd.h"
-int	ft_printf(const char *format, ...);
-void	ft_putchar(char c);
-#endif
+int	main()
+{
+	char	*mot;
+	int	res;
+
+	mot = "Bradley\n";
+	ft_printf(mot);
+	ft_printf("Charactere : %cn", 'B');
+
+	return (0);
+}

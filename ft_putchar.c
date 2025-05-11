@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 01:52:36 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/12 00:12:47 by britela-         ###   ########.fr       */
+/*   Created: 2025/05/11 23:49:05 by britela-          #+#    #+#             */
+/*   Updated: 2025/05/11 23:50:46 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include "unistd.h"
-int	ft_printf(const char *format, ...);
-void	ft_putchar(char c);
-#endif
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
