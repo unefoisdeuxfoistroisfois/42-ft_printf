@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 23:55:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/12 00:16:17 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/12 23:17:01 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main()
 
 	mot = "Bradley\n";
 	ft_printf(mot);
-	ft_printf("Charactere : %cn", 'B');
+	ft_printf("Charactere : %c", 'B');
 
 	return (0);
 }
