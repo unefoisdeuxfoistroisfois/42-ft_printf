@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/11 23:55:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/13 14:58:15 by britela-         ###   ########.fr       */
+/*   Created: 2025/05/13 16:14:51 by britela-          #+#    #+#             */
+/*   Updated: 2025/05/13 16:29:19 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main()
+void	ft_putstr(char	*str)
 {
-	char	*mot;
-	int	res;
+	int	i;
 
-	mot = "Bradley\n";
-	ft_printf(mot);
-	ft_printf("Charactere : %c\n", 'B');
-	ft_printf("String : %s\n", "Salut comment tu vas ?");
-	return (0);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }

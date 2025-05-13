@@ -6,13 +6,25 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 01:48:09 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/12 23:35:05 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/13 16:42:29 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdarg.h>
 
+int	verif(char format, va_list args)
+{
+	if (format == 'c')
+	{
+		ft_putchar(va_arg(args, int));
+	}
+	else if (format == 's')
+	{
+		ft_putstr(va_arg(args, char *));
+	}
+	return (0);
+}
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
@@ -29,9 +41,9 @@ int	ft_printf(const char *format, ...)
 
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%' && format[i + 1] == 'c')
+		if (format[i] == '%')
 		{
-			ft_putchar(va_arg(args, int));
+			verif(format[i + 1], args);
 			i = i + 2;
 			len ++;
 		}
