@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/11 23:55:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/13 20:18:07 by britela-         ###   ########.fr       */
+/*   Created: 2025/05/13 17:39:59 by britela-          #+#    #+#             */
+/*   Updated: 2025/05/13 17:40:47 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main()
+void	ft_putnbr(int nb)
 {
-	char	*mot;
-	int	res;
-	int	x;
-
-	mot = "Bradley\n";
-	x = 42;
-	ft_printf(mot);
-	ft_printf("Charactere : %c\n", 'B');
-	ft_printf("String : %s\n", "Salut comment tu vas ?");
-	ft_printf("Decimal : %d\n", -4219);
-	ft_printf("Entier : %i\n", 151);
-	ft_printf("Adresse : %p", &x);
-
-	return (0);
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		ft_putnbr(147483648);
+	}
+	else if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+		ft_putnbr(nb);
+	}
+	else if (nb >= 0 && nb < 10)
+	{
+		ft_putchar(nb + 48);
+	}
+	else if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		ft_putchar(nb + 48);
+	}
 }

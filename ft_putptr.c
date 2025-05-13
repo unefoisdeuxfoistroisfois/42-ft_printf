@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/11 23:55:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/13 20:18:07 by britela-         ###   ########.fr       */
+/*   Created: 2025/05/13 20:09:14 by britela-          #+#    #+#             */
+/*   Updated: 2025/05/13 20:12:20 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main()
+int	ft_putptr(void *ptr)
 {
-	char	*mot;
-	int	res;
-	int	x;
+	int	i;
+	unsigned long	ptr2;
 
-	mot = "Bradley\n";
-	x = 42;
-	ft_printf(mot);
-	ft_printf("Charactere : %c\n", 'B');
-	ft_printf("String : %s\n", "Salut comment tu vas ?");
-	ft_printf("Decimal : %d\n", -4219);
-	ft_printf("Entier : %i\n", 151);
-	ft_printf("Adresse : %p", &x);
-
-	return (0);
+	ptr2 = (unsigned long)ptr;
+	i = 0;
+	if (ptr == NULL)
+	{
+		return (0);
+	}
+	ft_putnbr_16(ptr2);
 }
+return (i);

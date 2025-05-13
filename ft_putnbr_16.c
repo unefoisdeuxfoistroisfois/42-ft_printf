@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_16.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/11 23:55:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/13 20:18:07 by britela-         ###   ########.fr       */
+/*   Created: 2025/05/13 19:09:11 by britela-          #+#    #+#             */
+/*   Updated: 2025/05/13 20:27:21 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main()
+long	ft_putnbr_16(unsigned long n)
 {
-	char	*mot;
-	int	res;
-	int	x;
+	char	*basemin;
+	char	*basemaj;
 
-	mot = "Bradley\n";
-	x = 42;
-	ft_printf(mot);
-	ft_printf("Charactere : %c\n", 'B');
-	ft_printf("String : %s\n", "Salut comment tu vas ?");
-	ft_printf("Decimal : %d\n", -4219);
-	ft_printf("Entier : %i\n", 151);
-	ft_printf("Adresse : %p", &x);
+	basemin = "0123456789ABCDEF";
+	basemaj = "0123456789abcdef";
 
-	return (0);
+	if (n >= 16)
+	{
+		i = i + ft_putnbr_16(n / 16);
+	i = i + ft_putchar(basemin[n % 16]);
+
+	return (i);
 }

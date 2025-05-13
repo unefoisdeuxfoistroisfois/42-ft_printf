@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 01:48:09 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/13 16:42:29 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/13 20:06:53 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ int	verif(char format, va_list args)
 	else if (format == 's')
 	{
 		ft_putstr(va_arg(args, char *));
+	}
+	else if (format == 'd' || format == 'i')
+	{
+		ft_putnbr(va_arg(args, int));
+	}	
+	else if (format == 'p')
+	{
+		ft_putptr(va_arg(args, void *));
 	}
 	return (0);
 }
