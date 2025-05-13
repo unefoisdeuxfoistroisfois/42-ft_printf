@@ -6,32 +6,32 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 01:48:09 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/13 20:06:53 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/13 23:42:46 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdarg.h>
 
-int	verif(char format, va_list args)
+int	verif(const char *format, va_list args, int i)
 {
-	if (format == 'c')
+	if (format[i + 1] == 'c')
 	{
 		ft_putchar(va_arg(args, int));
 	}
-	else if (format == 's')
+	else if (format[i + 1]  == 's')
 	{
 		ft_putstr(va_arg(args, char *));
 	}
-	else if (format == 'd' || format == 'i')
+	else if (format[i + 1]  == 'd' || format[i + 1]  == 'i')
 	{
 		ft_putnbr(va_arg(args, int));
 	}	
-	else if (format == 'p')
+	else if (format[i + 1]  == 'p')
 	{
 		ft_putptr(va_arg(args, void *));
 	}
-	return (0);
+	return (i + 2);
 }
 int	ft_printf(const char *format, ...)
 {
@@ -51,17 +51,15 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			verif(format[i + 1], args);
-			i = i + 2;
-			len ++;
+			verif(format, args, i);
+			i++;
 		}
 		else
 		{
 			ft_putchar(format[i]);
-			i++;
-			len ++;
 		}
+		i++;
 	}
 	va_end(args);
-	return (len); 
+	return (i); 
 }
