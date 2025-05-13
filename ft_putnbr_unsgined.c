@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr_unsgined.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 01:52:36 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/14 00:06:34 by britela-         ###   ########.fr       */
+/*   Created: 2025/05/14 00:01:09 by britela-          #+#    #+#             */
+/*   Updated: 2025/05/14 00:04:07 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include "unistd.h"
-int	ft_printf(const char *format, ...);
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-void	ft_putptr(void *ptr);
-void	ft_putnbr_16(unsigned long n);
-void	ft_putnbr_unsigned(unsigned int nb);
-#endif
+void	ft_putnbr_unsigned(unsigned int nb)
+{
+	if (nb < 10)
+	{
+		ft_putchar(nb + '0');
+	}
+	else
+	{
+		ft_putnbr_unsigned(nb / 10);
+		ft_putnbr_unsigned(nb % 10);
+	}
+}

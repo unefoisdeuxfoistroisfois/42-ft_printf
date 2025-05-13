@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 01:48:09 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/13 23:42:46 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/14 00:12:44 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,21 @@ int	verif(const char *format, va_list args, int i)
 	{
 		ft_putstr(va_arg(args, char *));
 	}
+	else if (format[i + 1]  == 'p')
+	{
+		ft_putptr(va_arg(args, void *));
+	}
 	else if (format[i + 1]  == 'd' || format[i + 1]  == 'i')
 	{
 		ft_putnbr(va_arg(args, int));
 	}	
-	else if (format[i + 1]  == 'p')
+	else if (format[i + 1] == 'u')
 	{
-		ft_putptr(va_arg(args, void *));
+		ft_putnbr_unsigned(va_arg(args, unsigned int)); 
+	}
+	else if (format[i + 1] == '%')
+	{
+		ft_putchar('%');
 	}
 	return (i + 2);
 }
