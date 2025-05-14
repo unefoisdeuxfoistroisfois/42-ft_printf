@@ -6,7 +6,7 @@
 #    By: britela- <britela-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/08 01:37:34 by britela-          #+#    #+#              #
-#    Updated: 2025/05/08 01:46:00 by britela-         ###   ########.fr        #
+#    Updated: 2025/05/14 21:32:25 by britela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,12 @@ CFLAGS = -g -Wall -Werror -Wextra
 
 NAME = libftprintf.a
 
-SRC = ft_printf.c
+SRC =	ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c \
+	ft_putnbr_16.c ft_putnbr_unsgined.c ft_putptr.cc 
  	
-OBJ = ft_printf.o
+OBJ = 	ft_printf.o ft_putchar.o ft_putstr.o ft_putnbr.o \
+	ft_putnbr_16.o ft_putnbr_unsgined.o ft_putptr.o
+
  	
 RM = rm -rf
 
