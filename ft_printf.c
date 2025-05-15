@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 01:48:09 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/14 21:23:56 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/15 15:35:32 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		i;
+	int		cpt;
 
 	i = 0;
+	cpt = 0;	
 	va_start(args, format);
 	if (format == NULL)
 	{
@@ -47,12 +49,14 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			verif(format, args, i);
+			cpt++;
 			i++;
 		}
 		else
 			ft_putchar(format[i]);
+			cpt++;
 		i++;
 	}
 	va_end(args);
-	return (i);
+	return (cpt);
 }
