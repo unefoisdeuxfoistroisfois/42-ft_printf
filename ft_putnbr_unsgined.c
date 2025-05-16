@@ -6,21 +6,25 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 00:01:09 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/14 00:04:07 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/16 18:42:41 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_unsigned(unsigned int nb)
+int	ft_putnbr_unsigned(unsigned int nb)
 {
+	int	cpt;
+
+	cpt = 0;
 	if (nb < 10)
 	{
-		ft_putchar(nb + '0');
+		cpt = cpt + ft_putchar(nb + '0');
 	}
 	else
 	{
-		ft_putnbr_unsigned(nb / 10);
-		ft_putnbr_unsigned(nb % 10);
+		cpt = cpt + ft_putnbr_unsigned(nb / 10);
+		cpt = cpt + ft_putnbr_unsigned(nb % 10);
 	}
+	return (cpt);
 }

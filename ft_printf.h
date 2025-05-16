@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 01:52:36 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/14 21:12:07 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/16 18:00:58 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 # include <stdarg.h>
 
 int		ft_printf(const char *format, ...);
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-void	ft_putptr(void *ptr);
-void	ft_putnbr_16(unsigned long n, char letter);
-void	ft_putnbr_unsigned(unsigned int nb);
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putnbr(int nb);
+int	ft_putptr(void *ptr);
+int	ft_putnbr_16(unsigned long n, char letter);
+int	ft_putnbr_unsigned(unsigned int nb);
 #endif

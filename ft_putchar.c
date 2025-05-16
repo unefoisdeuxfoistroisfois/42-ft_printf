@@ -6,13 +6,18 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 23:49:05 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/11 23:50:46 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/16 15:56:48 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
+	int	i;
+
+	i = 0;
 	write(1, &c, 1);
+	i++;
+	return (i);
 }
