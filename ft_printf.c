@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 01:48:09 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/16 17:59:28 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/17 01:54:23 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,20 @@ int	ft_check_char(const char *format, va_list args, int i)
 	return (cpt);
 }
 
+int	ft_exists(const char *format, int i)
+{
+	if (format[i] == '%' && format[i + 1] != '\0'
+		&& (format[i + 1] == 'c' || format[i + 1] == 's'
+			|| format[i + 1] == 'p' || format[i + 1] == 'd'
+			|| format[i + 1] == 'i' || format[i + 1] == 'u'
+			|| format[i + 1] == 'x' || format[i + 1] == 'X'
+			|| format[i + 1] == '%'))
+	{
+		return (1);
+	}
+	return (0);
+}
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
@@ -47,7 +61,7 @@ int	ft_printf(const char *format, ...)
 		return (-1);
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (ft_exists(format, i) == 1)
 		{
 			cpt = cpt + ft_check_char(format, args, i);
 			i = i + 2;
