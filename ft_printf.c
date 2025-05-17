@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 01:48:09 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/17 01:54:23 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/17 02:19:19 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_check_char(const char *format, va_list args, int i)
 	else if (format[i + 1] == 's')
 		cpt = cpt + ft_putstr(va_arg(args, char *));
 	else if (format[i + 1] == 'p')
-		cpt = cpt + ft_putptr(va_arg(args, void *));
+		cpt = cpt + ft_pointer(va_arg(args, void *));
 	else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 		cpt = cpt + ft_putnbr(va_arg(args, int));
 	else if (format[i + 1] == 'u')

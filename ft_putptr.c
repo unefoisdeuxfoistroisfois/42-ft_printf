@@ -6,13 +6,13 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 20:09:14 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/16 17:57:10 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/17 02:28:37 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putptr(void *ptr)
+int	ft_pointer(void *ptr)
 {
 	unsigned long	ptr2;
 	int				cpt;
