@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 23:55:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/16 20:41:20 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/18 13:26:41 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	main(void)
 	int	resultats2;
 	int	x = 42;
 
-	resultats1 = ft_printf("Bradley\n");
-	resultats2 = printf("Bradley\n");
+	resultats1 = ft_printf("%j\n");
+	resultats2 = printf("%j\n");
 	printf("ft_printf: %d chars | printf: %d chars\n\n", resultats1, resultats2);
 
 	resultats1 = ft_printf("Charactere : %c\n", 'B');
